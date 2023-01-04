@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+
+.wrap {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+
+.header {
+	width: 100%;
+	height: 10%;
+	padding: 5px 0 5px;
+	text-align: center;
+}
+
+#schoolLogo {
+	height: 100%;
+	max-width: 150px;
+}
+
+ul, li {
+	list-style: none;
+}
+
+ul::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	display: block;
+}
+
+.nav {
+	background-color: #288DFE;
+	width: 100%;
+	margin: auto auto;
+}
+
+.nav>#navMenu>ul {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 5px 0;
+}
+
+.nav>#navMenu>ul>li {
+	position: relative;
+	float: left;
+	width: 20%;
+	height: auto;
+	text-align: center;
+}
+
+#welcomeItem,#communityItem {
+	display: none;
+}
+
+#welcomeItem {
+	position: absolute;
+	top: 100%;
+	text-align: center;
+	width: 100%;
+	padding: 0px;
+	background-color: #288DFE;
+}
+
+#welcomeItem>li {
+	width: 100%;
+	height: 180%;
+}
+
+#welcomeItem>li>a {
+	margin: 4%;
+}
+
+#communityItem {
+	position: absolute;
+	top: 100%;
+	text-align: center;
+	width: 100%;
+	padding: 0px;
+	background-color: #288DFE;
+}
+
+#communityItem>li {
+	width: 100%;
+	height: 180%;
+}
+
+#communityItem>li>a {
+	margin: 4%;
+}
+
+#navItem>li:hover>a {
+	color: yellow;
+}
+
+#navItem>li:hover>#welcomeItem {
+	display: block;
+}
+
+#navItem>li:hover>#welcomeItem a:hover {
+	color: yellow;
+}
+
+#navItem>li:hover>#communityItem {
+	display: block;
+}
+
+#navItem>li:hover>#communityItem a:hover {
+	color: yellow;
+}
+
+#galleryAdd {
+	width: 3rem;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
