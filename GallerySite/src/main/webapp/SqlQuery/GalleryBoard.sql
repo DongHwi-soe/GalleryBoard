@@ -1,4 +1,5 @@
 create table galleryBoard (	
+	galleryNo,
 	seq int not null primary key auto_increment,
 	subject varchar(150) not null,
 	writer varchar(12) not null,
