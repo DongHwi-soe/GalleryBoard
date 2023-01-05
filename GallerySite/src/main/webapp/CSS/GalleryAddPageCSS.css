@@ -141,12 +141,66 @@ a {
 	margin: 5px auto;
 }
 
-#titleInput {
+#titleInput,#contentsInput,#fileInput,#submitButton {
+	background-color: #f1f3ff;
+	text-align: center;
+}
+
+#titleInput>h1 {
+	width: 90%;
+	text-align: left;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	margin: 0 auto;
 	background-color: #f1f3ff;
 }
 
 #titleInput>input {
+	max-width: 90%;
+	min-width: 90%;
+	height: 30px;
+}
+
+#contentsInput>h1 {
+	width: 90%;
+	text-align: left;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	margin: 0 auto;
+	background-color: #f1f3ff;
+}
+
+#contentsInput>textarea {
+	margin: auto;
+	max-width: 90%;
+	min-width: 90%;
+}
+
+#fileInput>h1 {
+	width: 90%;
+	text-align: left;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	margin: 0 auto;
+	background-color: #f1f3ff;
+}
+
+#fileInput>input {
 	width: 90%;
 	margin: auto;
 	background-color: #f1f3ff;
+}
+
+#submitButton {
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+#submitButton>button {
+	width: 30%;
+	height: 50px;
+	font-size: 30px;
+	color: #FFFFFF;
+	background-color: #288dfe;
+	border: 2px solid #00237B;
 }

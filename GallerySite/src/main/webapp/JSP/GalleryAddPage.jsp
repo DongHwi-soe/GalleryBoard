@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>갤러리 업로드 페이지</title>
-<link href="../CSS/GalleryAddPageCSS.css?ver=1" rel="stylesheet" type="text/css" />
+<link href="../CSS/GalleryAddPageCSS.css?ver=6" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="wrap">
@@ -39,11 +39,25 @@
 		<div class="content">
 			<div id="contentWrap">
 				<form method="post" action="./WriteAction.jsp">
-					<div id="notice"><h1>갤러리 작성 양식</h1></div>
-					<div id="titleInput"><input type="text" name="title" placeholder="제목을 입력하세요." required="required"/></div>
-					<div id="contentsInput"><input type="text" name="contents" placeholder="내용을 입력하세요."/></div>
-					<div id="fileInput"><input type="file" name="fileName"/></div>
-					<div id="submitButton"><button type="submit">Sign In</button></div>
+					<div id="notice">
+						<h1>갤러리 작성 양식</h1>
+					</div>
+					<div id="titleInput">
+						<h1>Title</h1>
+						<input type="text" name="title" 
+							placeholder="제목을 입력하세요." required="required"/>
+					</div>
+					<div id="contentsInput">
+						<h1>Description</h1>
+						<textarea rows="10" cols="120" placeholder="내용을 입력하세요."></textarea>
+					</div>
+					<div id="fileInput">
+						<h1>Picture</h1>
+						<input type="file" name="fileName">
+					</div>
+					<div id="submitButton">
+						<button type="submit">글쓰기</button>
+					</div>
 				</form>
 			</div>
 		</div>
