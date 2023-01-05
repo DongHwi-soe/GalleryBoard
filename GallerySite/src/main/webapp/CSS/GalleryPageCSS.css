@@ -121,8 +121,19 @@ a {
 }
 
 #galleryAdd {
-	width: 3rem;
+	width: 60px;
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
+}
+
+.content {
+	width: 100%;
+	margin: auto auto;
+}
+
+#contentWrap {
+	max-width: 1000px;
+	margin: 15px auto;
+	box-shadow: 1px 1px 1px 1px #D5D5D5;
 }

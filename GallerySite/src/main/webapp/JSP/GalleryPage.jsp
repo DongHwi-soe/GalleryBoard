@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>갤러리 페이지</title>
-<link href="../CSS/GalleryPageCSS.css?ver=8" rel="stylesheet" type="text/css" />
+<link href="../CSS/GalleryPageCSS.css?ver=10" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div class="wrap">
@@ -36,7 +36,11 @@
 			</nav>
 		</div>
 		<!-- 갤러리 -->
-		<div class="baner content">
+		<div class="content">
+			<div id="contentWrap">
+				<div id="galleryBoard"></div>
+				<div id="galleryPager"></div>
+			</div>
 			<div id="galleryAdd">
 				<img id="galleryAdd" src="../Image/addButton.svg" alt="갤러리 추가">
 			</div>
