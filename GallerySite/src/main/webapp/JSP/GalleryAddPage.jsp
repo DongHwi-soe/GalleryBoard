@@ -38,7 +38,7 @@
 		<!-- 갤러리 업로드 -->
 		<div class="content">
 			<div id="contentWrap">
-				<form method="post" action="./WriteAction.jsp">
+				<form method="post" action="./WriteAction.jsp" enctype="multipart/form-data">
 					<div id="notice">
 						<h1>갤러리 작성 양식</h1>
 					</div>
@@ -49,7 +49,7 @@
 					</div>
 					<div id="contentsInput">
 						<h1>Description</h1>
-						<textarea rows="10" cols="120" placeholder="내용을 입력하세요."></textarea>
+						<textarea name="contents" rows="10" cols="120" placeholder="내용을 입력하세요."></textarea>
 					</div>
 					<div id="fileInput">
 						<h1>Picture</h1>

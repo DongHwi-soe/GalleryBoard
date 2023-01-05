@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 import galleryDTO.GalleryVO;
 
 public class GalleryDAO {
@@ -26,20 +29,22 @@ public class GalleryDAO {
 	}
 	
 	public int join(GalleryVO galleryVO) {
-		String SQL = "INSERT INTO GalleryBoard VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		
+		String location = "C:\\Users\\DongH\\Image_REPO";
+		
+		int maxSize = 1024 * 1024* 5;
+		
+		String SQL = "INSERT INTO GalleryBoard(galleryNo, title, writer, contents, fileName, fileSize, hit, recordDate, DelCheck)"
+				+ " VALUES ((SELECT NVL(MAX(galleryNo), 0) + 1 FROM GalleryBoard), ?, ?, ?, ?, ?, ?, to_char(sysdate, 'yyyy.mm.dd hh24:mi'), ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, galleryVO.getGalleryNo());
-			pstmt.setString(2, galleryVO.getTitle());
-			pstmt.setString(3, galleryVO.getWriter());
-			pstmt.setString(4, galleryVO.getContents());
-			pstmt.setString(5, galleryVO.getFileName());
-			pstmt.setInt(6, galleryVO.getFileSize());
-			pstmt.setInt(7, galleryVO.getHit());
-			pstmt.setString(8, galleryVO.getRecordDate());
-			pstmt.setString(9, galleryVO.getEditDate());
-			pstmt.setInt(10, galleryVO.getDelCheck());
-			pstmt.setString(11, galleryVO.getDelDate());
+			pstmt.setString(1, galleryVO.getTitle());
+			pstmt.setString(2, "관리자");
+			pstmt.setString(3, galleryVO.getContents());
+			pstmt.setString(4, galleryVO.getFileName());
+			pstmt.setInt(5, galleryVO.getFileSize());
+			pstmt.setInt(6, 0);
+			pstmt.setInt(7, 0);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
