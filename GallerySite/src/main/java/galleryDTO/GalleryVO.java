@@ -7,7 +7,7 @@ public class GalleryVO {
 	private String writer;
 	private String contents;
 	private String fileName;
-	private int fileSize;
+	private long fileSize;
 	private int hit;
 	private String recordDate;
 	private String editDate;
@@ -49,10 +49,10 @@ public class GalleryVO {
 		this.fileName = fileName;
 	}
 	
-	public int getFileSize() {
+	public long getFileSize() {
 		return fileSize;
 	}
-	public void setFileSize(int fileSize) {
+	public void setFileSize(long fileSize) {
 		this.fileSize = fileSize;
 	}
 	

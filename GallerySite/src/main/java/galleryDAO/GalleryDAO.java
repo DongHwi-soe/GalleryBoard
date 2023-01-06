@@ -5,9 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-
 import galleryDTO.GalleryVO;
 
 public class GalleryDAO {
@@ -28,27 +25,28 @@ public class GalleryDAO {
 		}
 	}
 	
-	public int join(GalleryVO galleryVO) {
+	public int recordInsert(GalleryVO galleryVO) {
+		System.out.println("recordInsert() 입장");
+		int flag = 1;
 		
-		String location = "C:\\Users\\DongH\\Image_REPO";
-		
-		int maxSize = 1024 * 1024* 5;
-		
-		String SQL = "INSERT INTO GalleryBoard(galleryNo, title, writer, contents, fileName, fileSize, hit, recordDate, DelCheck)"
-				+ " VALUES ((SELECT NVL(MAX(galleryNo), 0) + 1 FROM GalleryBoard), ?, ?, ?, ?, ?, ?, to_char(sysdate, 'yyyy.mm.dd hh24:mi'), ?)";
+		String SQL = "INSERT INTO GalleryBoard(galleryNo, title, writer, contents, fileName, fileSize, hit, recordDate, DelCheck) VALUES ((SELECT NVL(MAX(galleryNo), 0) + 1 FROM GalleryBoard), ?, ?, ?, ?, ?, 0, sysdate, 0);";
 		try {
+			System.out.println("SQL문 입장");
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, galleryVO.getTitle());
-			pstmt.setString(2, "관리자");
+			pstmt.setString(2, galleryVO.getWriter());
 			pstmt.setString(3, galleryVO.getContents());
 			pstmt.setString(4, galleryVO.getFileName());
-			pstmt.setInt(5, galleryVO.getFileSize());
-			pstmt.setInt(6, 0);
-			pstmt.setInt(7, 0);
-			return pstmt.executeUpdate();
+			pstmt.setLong(5, galleryVO.getFileSize());
+			int rs = pstmt.executeUpdate();
+			System.out.println("SQL문 종료");
+			if(rs == 1) {
+				flag = 0;
+			}
 		} catch (Exception e) {
+			System.out.print("recordInsert() 오류 : ");
 			e.printStackTrace();
 		}
-		return -1;
+		return flag;
 	}
 }
